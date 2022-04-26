@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Z_Kart.Default" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .all
+        {
+            background-color:green;
+            border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%;
+            
+		    position: relative;
+		    bottom: 20px;
+		    left:1px;
+		    text-align:left;
+            color: white;
+            float:left;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style =" background-color:#242424">
+    <form id="form1" runat="server">
+    <div >
+    <table style=" width:1100px; margin:0 auto; background-color:white">
+        <tr style=" width:1100px; height:50px; border-color:#5f98f3; background-color:White">
+        
+            <td style=" width:740px" align="center">
+                <asp:Label ID="Label1" runat="server" Text="ZKart" 
+                    Font-Bold="True" Font-Names="Copperplate Gothic Bold" 
+                    ForeColor="RoyalBlue" Font-Size="35px"></asp:Label>
+                    <br /><b>WELCOME!</b>
+                    </td>
+            <td style=" width:230px; text-align:right">
+
+                <asp:Button ID="btnSubmit" runat="server" Text="Cart" Font-Bold="True" style=" text-align:left"
+                        ForeColor="Black" Height="36px" Width="88px" onclick="btnSubmit_Click" CausesValidation="False" />
+                <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="X-Large" 
+                    ForeColor="#5F98F3"></asp:Label>
+            </td>
+        </tr>
+
+        <tr style=" width:1100px; height:40px; background-color:#5f98f3">
+            <td colspan="3" style=" text-align:right">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" 
+                    StaticSubMenuIndent="19px">
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem Text="All Products" Value="All Products" 
+                            NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Registration" Value="Registration" 
+                            NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="User Login" Value="User Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#FF6666" BorderColor="#FF6666" 
+                        BorderStyle="Outset" ForeColor="White" Height="40px" />
+                    <StaticMenuItemStyle Font-Bold="True" Font-Size="Large" ForeColor="Black" 
+                        HorizontalPadding="54px" />
+                    <StaticSelectedStyle BackColor="#FF5050" BorderColor="#FF6666" 
+                        BorderStyle="Inset" ForeColor="#666666" Height="40px" />
+                </asp:Menu>
+            </td>
+        </tr>
+        <tr style=" width:1110px; height:310px;">
+            <td colspan="3">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+   
+                </asp:UpdatePanel>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+
+        <tr style=" width:1100px; height:25px; background-color:Black; text-align:center; color:White">
+            <td colspan="3">
+                &copy; ZKart
+            </td>
+        </tr>
+
+    </table>
+        
+    </div>
+    </form>
+</body>
+</html>
